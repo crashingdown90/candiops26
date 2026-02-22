@@ -29,6 +29,11 @@ export default function SlideContent({ content, slideType = 'content' }: SlideCo
                                 {...props}
                             />
                         ),
+                        table: ({ children, ...props }) => (
+                            <div className="table-scroll-wrapper">
+                                <table {...props}>{children}</table>
+                            </div>
+                        ),
                     }}
                 >
                     {content}

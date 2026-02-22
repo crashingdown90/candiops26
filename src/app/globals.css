@@ -115,6 +115,8 @@ body {
   background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(19, 25, 32, 0.95) 100%);
   z-index: 10;
   min-height: 46px;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .header-left,
@@ -403,14 +405,36 @@ body {
 
 /* Broken images are hidden via onError in SlideContent.tsx */
 
+/* === Table Scroll Wrapper === */
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px 0;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar {
+  height: 3px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
 /* === Tables — Compact Intelligence Grid === */
 .markdown-body table {
   width: 100%;
   border-collapse: collapse;
-  margin: 10px 0;
+  margin: 0;
   font-size: 0.78rem;
   border: 1px solid var(--border-color);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  min-width: 500px;
 }
 
 .markdown-body thead th {
@@ -703,15 +727,38 @@ body {
 /* === Responsive === */
 @media (max-width: 768px) {
   .slide-header {
-    padding: 8px 16px;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+
+  .header-right {
+    order: 2;
+    gap: 8px;
+  }
+
+  .classified-badge-sm {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.45rem;
+    padding: 2px 8px;
+  }
+
+  .logout-button {
+    padding: 4px 8px;
+    font-size: 0.45rem;
   }
 
   .slide-main {
-    padding: 20px 16px;
+    padding: 16px 12px;
   }
 
   .slide-footer {
-    padding: 6px 16px 10px;
+    padding: 6px 12px 10px;
   }
 
   .slide-wrapper::before,
@@ -720,28 +767,41 @@ body {
   }
 
   .markdown-body h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .slide-type-cover .markdown-body h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .slide-type-cover .markdown-body h2 {
+    font-size: 0.85rem;
   }
 
   .markdown-body h2 {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .markdown-body h3 {
+    font-size: 0.72rem;
+  }
+
+  .markdown-body p {
     font-size: 0.78rem;
   }
 
+  .markdown-body li {
+    font-size: 0.76rem;
+  }
+
   .nav-button {
-    padding: 5px 10px;
+    padding: 8px 12px;
     font-size: 0.52rem;
   }
 
   .markdown-body table {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+    min-width: 420px;
   }
 
   .markdown-body thead th,
@@ -751,8 +811,20 @@ body {
 
   .markdown-body img,
   .markdown-body img.profile-photo {
-    width: 110px;
-    height: 138px;
+    width: 100px;
+    height: 125px;
+  }
+
+  .navigation {
+    gap: 8px;
+  }
+
+  .progress-label {
+    font-size: 0.42rem;
+  }
+
+  .progress-count {
+    font-size: 0.48rem;
   }
 }
 
@@ -982,17 +1054,49 @@ body {
 
 /* Modal responsive */
 @media (max-width: 768px) {
+  .actor-grid h1 {
+    font-size: 1.05rem;
+  }
+
+  .actor-grid-subtitle {
+    font-size: 0.55rem;
+  }
+
+  .actor-group-name {
+    font-size: 0.55rem;
+  }
+
   .actor-list {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .actor-card {
+    padding: 10px 12px;
+  }
+
+  .actor-card-name {
+    font-size: 0.76rem;
+  }
+
+  .actor-card-role {
+    font-size: 0.55rem;
   }
 
   .actor-modal {
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 92vh;
   }
 
   .actor-modal-body {
-    padding: 20px 16px;
+    padding: 16px 14px;
+  }
+
+  .actor-modal-close {
+    width: 36px;
+    height: 36px;
+    top: 8px;
+    right: 8px;
   }
 }
 
@@ -1439,8 +1543,26 @@ body {
   }
 
   .login-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
+    font-size: 1.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  .login-code-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  .login-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .login-stamp {
+    margin-bottom: 24px;
+  }
+
+  .login-title-block {
+    margin-bottom: 20px;
   }
 
   .login-terminal-body {
@@ -1448,15 +1570,52 @@ body {
   }
 
   .classified-badge-lg {
-    font-size: 0.78rem;
-    padding: 6px 18px;
+    font-size: 0.68rem;
+    padding: 5px 14px;
+    letter-spacing: 0.2em;
+  }
+
+  .login-typing-line {
+    margin-bottom: 14px;
+  }
+
+  .login-typed-text {
+    font-size: 0.58rem;
   }
 
   .login-input-row {
     flex-wrap: wrap;
   }
 
+  .login-input-label {
+    font-size: 0.6rem;
+  }
+
   .login-input {
     width: 100%;
+    font-size: 0.75rem;
+  }
+
+  .login-submit {
+    padding: 14px 20px;
+    font-size: 0.65rem;
+  }
+
+  .login-warning {
+    font-size: 0.45rem;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-title {
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+  }
+
+  .classified-badge-lg {
+    font-size: 0.58rem;
+    padding: 4px 10px;
+    letter-spacing: 0.15em;
   }
 }
