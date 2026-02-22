@@ -42,7 +42,8 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: var(--bg-dark);
   color: var(--text-primary);
@@ -71,6 +72,7 @@ body {
 .slide-wrapper {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -570,9 +572,11 @@ body {
 /* === Footer === */
 .slide-footer {
   padding: 8px 32px 12px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
   border-top: 1px solid var(--border-color);
   background: linear-gradient(180deg, rgba(19, 25, 32, 0.95) 0%, var(--bg-surface) 100%);
   z-index: 10;
+  flex-shrink: 0;
 }
 
 /* === Progress Bar === */
@@ -759,6 +763,7 @@ body {
 
   .slide-footer {
     padding: 6px 12px 10px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
   }
 
   .slide-wrapper::before,
@@ -1108,6 +1113,7 @@ body {
 .login-wrapper {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
