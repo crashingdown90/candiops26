@@ -1,7 +1,7 @@
 ---
 title: "Analisis Jaringan GMNI"
 classification: "SANGAT RAHASIA"
-slideType: "content"
+slideType: "network"
 ---
 
 # Analisis Jaringan: Afiliasi GMNI & Organisasi Mahasiswa
@@ -59,39 +59,6 @@ Kemampuan bergerak **lintas ideologi** ini menunjukkan karakter **oportunis-prag
 **Bambang Pacul** (Ketua PA GMNI) → **Heri Londo** (Sekretaris PA GMNI) → **Zulkifli Gayo** (alumni GMNI)
 
 Heri Londo **merekomendasikan** Zulkifli Gayo sebagai **Ketua TPPD** — koneksi GMNI menjadi jalur patronase.
-
-## Peta Jaringan Lintas Organisasi
-
-```
-┌──────────────────────────────────────────────────────┐
-│              PA GMNI JAWA TENGAH                     │
-│                                                      │
-│  Ketua: BAMBANG PACUL ─────── PDIP / MPR RI          │
-│  Sekretaris: HERI LONDO ───── GERINDRA / DPRD        │
-│  Alumni: ZULKIFLI GAYO ────── Ketua TPPD Jateng      │
-│                                                      │
-│  ⚠️ SEGITIGA GMNI: PDIP ↔ GERINDRA ↔ BIROKRASI    │
-└──────────────────────────────────────────────────────┘
-           │                      │
-           ▼                      ▼
-   ┌──────────────┐      ┌────────────────────────┐
-   │   PDIP       │      │   GERINDRA              │
-   │  Sumanto     │      │  Ahmad Lutfi ←── PMII   │
-   │  (Ketua DPRD)│      │  (Gubernur)             │
-   └──────────────┘      │  Heri Londo ←── PA GMNI │
-                         │  (Wk Ketua DPRD)        │
-                         └───────────┬─────────────┘
-                                     │ rekomendasi
-                                     ▼
-                         ┌────────────────────────┐
-                         │  Zulkifli Gayo         │
-                         │  (Ketua TPPD)          │
-                         │  ← GMNI + HMI + KAMMI  │
-                         │  ← Direk. Heri Londo   │
-                         │  ← S3 di Unissula      │
-                         │    (= Moh. Saleh)      │
-                         └────────────────────────┘
-```
 
 ## Catatan Intelijen
 

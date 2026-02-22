@@ -569,6 +569,104 @@ body {
   margin: 24px auto;
 }
 
+/* === Network Graph — SNA Visualization === */
+
+/* Network type slide: ensure content stacks vertically */
+.slide-type-network .slide-main {
+  display: block;
+}
+
+.network-graph-container {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(196, 163, 90, 0.05);
+  overflow: hidden;
+}
+
+.network-graph-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.network-canvas {
+  display: block;
+  width: 100%;
+}
+
+.network-tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  background: rgba(19, 25, 32, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent);
+  padding: 10px 14px;
+  min-width: 140px;
+  max-width: 240px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(196, 163, 90, 0.08);
+  animation: fade-in 0.15s ease-out;
+}
+
+.network-tooltip-name {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.network-tooltip-detail {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.network-tooltip-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.network-tooltip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .network-graph-container {
+    margin-bottom: 12px;
+    min-height: 320px;
+  }
+
+  .network-tooltip {
+    display: none;
+  }
+}
+
 /* === Footer === */
 .slide-footer {
   padding: 8px 32px 12px;
